@@ -105,8 +105,16 @@ hadoop fs -wc -l *
 and verify these counts by running count query on sql runnng sqoop eval commands
 
 ============================================
+How to move data to Hive table from MySql using sqoop
+When running hive in a cluster , there will be a directory in hdfs  /user/hive/warehouse where all hive data is stored in hdfs
+Hive uses mapreduce as processing engine and hdfs as storage
+we created directory named: /user/hive/warehouse/sqoop_import database .
 
-
-
-
-
+sqoop import-all-tables \
+> --num-mappers 1 \
+> --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" \
+> --username retail_dba --password cloudera \
+> --hive-import --hive-overwrite \
+> --create-hive-table --compress \
+> --compression-codec org.apache.hadoop.io.compress.SnappyCodec \
+> --outdir java_files
