@@ -101,8 +101,11 @@ to look ast data hadoop fs -tail  file path in hdfs:
 
 hadoop fs -cat to see content of a file
 
+hadoop fs -wc -l * 
+and verify these counts by running count query on sql runnng sqoop eval commands
 
 ============================================
+
 
 
 
