@@ -1,4 +1,6 @@
 Sqoop is a tool which is part of CDH . 
+Documentation for Sqoop : https://sqoop.apache.org/docs/1.4.6/SqoopUserGuide.html#_connecting_to_a_database_server
+
 Benifits of Using Sqoop: Sqoop is used to import export data from relational databases into HDFS , while preserving struncture.
 
 to see all command available in sqoop . 
