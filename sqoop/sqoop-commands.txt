@@ -2,6 +2,8 @@ Sqoop is a tool which is part of CDH .
 Benifits of Using Sqoop: Sqoop is used to import export data from relational databases into HDFS , while preserving struncture.
 
 to see all command available in sqoop . 
+
+==================================================
 > sqoop help
 Available commands in sqoop:
   codegen            Generate code to interact with database records
@@ -29,6 +31,7 @@ To list all databases available in a mysql database
 information_schema
 retail_db
 
+===============================================
 To List all tables in a database
 > sqoop list-tables --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --username retail_dba --password cloudera
 
@@ -42,3 +45,21 @@ departments
 order_items
 orders
 products
+===============================================
+To run a query using eval: Before running quesrites this is just a sanity check if user have required permissions to execute queries on 
+a database or not.
+
+sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --username retail_dba --password cloudera --query "select * from departments"
+==output
+16/11/16 11:53:09 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+--------------------------------------
+| department_id | department_name      | 
+--------------------------------------
+| 2           | Fitness              | 
+| 3           | Footwear             | 
+| 4           | Apparel              | 
+| 5           | Golf                 | 
+| 6           | Outdoors             | 
+| 7           | Fan Shop             | 
+--------------------------------------
+
