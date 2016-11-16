@@ -20,4 +20,25 @@ Available commands in sqoop:
   version            Display version information
 
 ===============================================
-Command Usage
+Command Usage (All commands are run in context of CLOUDERA Quick Start VM )
+To list all databases available in a mysql database 
+> sqoop list-databases --connect "jdbc:mysql://quickstart.cloudera:3306" --username retail_dba --password cloudera
+
+==output of the above command
+> 16/11/16 07:04:34 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+information_schema
+retail_db
+
+To List all tables in a database
+> sqoop list-tables --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --username retail_dba --password cloudera
+
+==output of the above command:Displays all tables in retail_db
+
+line is insecure. Consider using -P instead.
+16/11/16 07:11:22 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+categories
+customers
+departments
+order_items
+orders
+products
