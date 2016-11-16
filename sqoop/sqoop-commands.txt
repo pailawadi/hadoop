@@ -1,0 +1,1 @@
+Benifits of Using Sqoop: Sqoop is used to import export data from relational databases into HDFS , while preserving struncture.
