@@ -24,6 +24,9 @@ Available commands in sqoop:
   version            Display version information
 
 ===============================================
+To get help on specific sqoop command use : sqoop help import 
+
+=======================================================
 Command Usage (All commands are run in context of CLOUDERA Quick Start VM )
 To list all databases available in a mysql database 
 > sqoop list-databases --connect "jdbc:mysql://quickstart.cloudera:3306" --username retail_dba --password cloudera
@@ -70,3 +73,25 @@ sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --usernam
 To Hide a passowrd : User -P as argument which will prompt for password . (Username and password is of database to connect in this case mysql)
 
 sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --username retail_dba -P  --query "select * from departments"
+
+============================
+4) Sqoop Import: To import tables , command used is sqoop import. Sqoop Import takes two types of arguments generic and specific arguments
+Generic arguments containg : --connect , --username --password, --
+
+Tool Specific arguments are followed by -- ex: --connect , hadoop arguments are followed by - for ex -fs ,-D ,-jt
+
+> sqoop import-all-tables
+  -m (number of mappers /parallel thread )
+  --connect "jdbc://"
+  --username ={}
+  --password={}
+  --as{-avrodatafile} ( file format in which data need to be stored in HDFS, this represents avro file format  which is similar to JSON. Default file format is text file ,also there is binary file format
+  --warehouse-dir ={location of directory in hdfs where data to be stored}
+  
+ 
+example: sqoop import-all-tables -m 12  --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --username retail_dba --password cloudera --warehouse-dir "/user/cloudera/sqoop_import"
+
+
+
+
+
