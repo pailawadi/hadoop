@@ -1,6 +1,13 @@
 
-How to move data to Hive table from MySql using sqoop:
+How to move data to Hive table from MySql 
 When running hive in a cluster , there will be a directory in hdfs  /user/hive/warehouse where all hive data is stored in hdfs
 Hive uses mapreduce as processing engine and hdfs as storage
 
-dfs -ls /user/hive/warehouse
+To Start hive type hive in command line:
+hive >  dfs -ls /user/hive/warehouse
+hive > dfs -ls /user/hive/warehouse
+
+> create database sqoop_import
+
+output :drwxrwxrwx   - cloudera supergroup          0 2016-11-16 13:22 /user/hive/warehouse/sqoop_import.db
+.db stands for database
