@@ -63,3 +63,8 @@ sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --usernam
 | 7           | Fan Shop             | 
 --------------------------------------
 
+============= ===========================================
+
+To Hide a passowrd : User -P as argument which will prompt for password . (Username and password is of database to connect in this case mysql)
+
+sqoop eval --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --username retail_dba -P  --query "select * from departments"
