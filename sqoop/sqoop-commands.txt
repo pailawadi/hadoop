@@ -91,6 +91,18 @@ Tool Specific arguments are followed by -- ex: --connect , hadoop arguments are 
  
 example: sqoop import-all-tables -m 12  --connect "jdbc:mysql://quickstart.cloudera:3306/retail_db" --username retail_dba --password cloudera --warehouse-dir "/user/cloudera/sqoop_import"
 
+to check if data is copied : check hadoop file system : hadoop fs -ls /user/cloudera/sqoop_import/ will show all the tables
+to check specific table data : /user/cloudera/sqoop_import/products will show details of product table
+
+to look ast data hadoop fs -tail  file path in hdfs:
+
+1343,59,Nike Men's Home Game Jersey St. Louis Rams Mi,,100.0,http://images.acmesports.sports/Nike+Men%27s+Home+Game+Jersey+St.+Louis+Rams+Michael+Sam+%2396
+1344,59,Nike Men's Home Game Jersey St. Louis Rams Aa,,100.0,http://images.acmesports.sports/Nike+Men%27s+Home+Game+Jersey+St.+Louis+Rams+Aaron+Donald+%2399
+
+hadoop fs -cat to see content of a file
+
+
+============================================
 
 
 
