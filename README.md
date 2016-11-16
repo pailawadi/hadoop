@@ -1,6 +1,6 @@
 This Repository is for Hadoop Ecosystem componenets notes:
 
-Different Sections under this are as follows and will be added more in futire.
+Different Sections under this are as follows and will be added more in future.
 
 1)hadoop/Sqoop
 
